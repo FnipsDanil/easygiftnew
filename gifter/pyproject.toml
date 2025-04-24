@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "gifter"
+version = "0.1.0"
+description = ""
+authors = ["Stepan <Stepworm@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.115.12"
+uvicorn = "^0.34.1"
+aiogram = "^3.20.0.post0"
+dotenv = "^0.9.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

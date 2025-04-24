@@ -1,0 +1,118 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(8px); /* было 12px — смягчили */
+  background: rgba(0, 0, 0, 0.35); /* было 0.45 — чуть прозрачнее */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  position: relative;
+  background: transparent;
+  padding: 28px 24px;
+  width: 90%;
+  max-width: 380px;
+  color: white;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Inter, sans-serif;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.75);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.modal-box h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--tg-theme-button-text-color);
+}
+
+.modal-box p {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--tg-theme-button-text-color);
+  margin-bottom: 20px;
+}
+
+.modal-box img.modal-gift {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin: 20px auto;
+}
+
+.modal-stars {
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.modal-stars img {
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+}
+.modal-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.modal-button {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.modal-button.claim {
+  background-color: var(--tg-theme-button-color);
+  color: var(--tg-theme-button-text-color);
+}
+
+.modal-button.sell {
+  background-color: var(--tg-theme-button-color);
+  color: var(--tg-theme-button-text-color);
+}
+.modal-button img {
+  margin-left: 3px;
+  width: 15px;
+  height: 15px;
+  transform: translateY(2px);
+}
+
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

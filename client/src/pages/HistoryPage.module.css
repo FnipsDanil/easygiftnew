@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo&display=swap');
+
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Inter, sans-serif;
+  color: var(--tg-theme-text-color);
+}
+
+.pageTitle {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: var(--tg-theme-text-color);
+  font-family: 'Arvo', serif;
+}
+
+.pageSubtitle {
+  text-align: center;
+  font-size: 14px;
+  color: var(--tg-theme-hint-color);
+  padding-bottom: 16px;
+}
+
+.historyContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 40px;
+  max-width: 725px;
+  width: 100%;               
+  margin: 0 auto;   
+}
+
+
+.historyItem {
+  display: flex;
+  align-items: center;
+  background-color: var(--tg-theme-secondary-bg-color);
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.historyIcon {
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.historyImage {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.historyContent {
+  flex: 1;
+}
+
+.historyTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* ⬅️ Текст остаётся вверху */
+  padding-top: 2px;        /* ⬇️ Чуть опустить текст вниз */
+}
+
+.historyType {
+  font-weight: 500;
+  color: var(--tg-theme-text-color);
+}
+
+.historyStars {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  transform: translateY(10px);  /* ⬇️ Явно опускаем на несколько пикселей */
+  gap: 3px;
+}
+
+.starIcon {
+  width: 16px;
+  height: 16px;
+  margin-top: 0;        /* ❌ не нужен, теперь всё по центру */
+}
+
+.positive {
+  color: #2ecc71;
+}
+
+.negative {
+  color: #e74c3c;
+}
+
+.historyDate {
+  font-size: 12px;
+  color: var(--tg-theme-hint-color);
+  margin-top: 4px;
+}

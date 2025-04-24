@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo&display=swap');
+.tabbar{
+  height: 73px;
+}
+
+.banner {
+  position: fixed;
+  bottom: 73px;
+  left: 0;
+  width: 100%;
+  background-color: var(--tg-theme-secondary-background-color);
+  color: var(--tg-theme-text-color);
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Inter, sans-serif;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-size: 14px;
+  text-align: center;
+  z-index: 999;
+  backdrop-filter: blur(20px);
+  border-top: 1px solid var(--tg-theme-background-color);
+  font-weight: bold;
+}
+
+.bannerLink {
+  color: var(--tg-theme-bottom_bar_bg_color);
+  text-decoration: none;
+}
+
+.username {
+  color: var(--tg-theme-link-color);
+  font-weight: 600;
+}

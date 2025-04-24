@@ -1,0 +1,20 @@
+# Этап 1: Установка зависимостей
+FROM node:18-alpine
+
+# Установка рабочей директории
+WORKDIR /app
+
+# Копируем package.json и package-lock.json (если есть)
+COPY package*.json ./
+
+# Устанавливаем зависимости
+RUN npm install
+
+# Копируем весь проект
+COPY . .
+
+# Указываем порт (если ты запускаешь на 3000)
+EXPOSE 3000
+
+# Команда запуска
+CMD ["node", "server.js"]

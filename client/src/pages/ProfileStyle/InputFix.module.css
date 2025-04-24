@@ -1,0 +1,7 @@
+.inputIOSFix {
+    border: 1px solid var(--tg-theme-text-color);
+    background-color: var(--tg-theme-secondary-background-color);
+    border-radius: 10px;
+    padding: 10px;
+    color: var(--tg-theme-text-color);
+  }

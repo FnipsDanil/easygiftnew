@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo');
+
+.roulette-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.case-preview-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: var(--tg-theme-secondary-bg-color); /* нативный фон */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto auto auto; /* отступ сверху и чуть ближе к рулетке */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* мягкая тень */
+}
+
+.case-preview-circle img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.start-button button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 16px;
+  gap: 6px;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Segoe UI, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Inter, sans-serif;
+}
+
+.start-button button img {
+  width: 16px;
+  height: 16px;
+  transform: translateY(2px);
+  margin-left: 2px;
+}
+.scroll-wrapper {
+  max-height: 100vh;
+  overflow-y: auto;
+  margin-bottom: 70px;
+  box-sizing: border-box;
+
+  /* Скрыть скролл во всех браузерах */
+  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;       /* Internet Explorer 10+ */
+}
+
+.scroll-wrapper::-webkit-scrollbar {
+  display: none;                  /* Chrome, Safari, Opera */
+}
+
+/* Для контейнера с подарками (если надо тоже там) */
+.possible-prizes-container {
+  /* уже есть overflow-x: auto — добавим скрытие */
+  scrollbar-width: none;
+}
+
+.possible-prizes-container::-webkit-scrollbar {
+  display: none;
+}
+
+.raffle-roller {
+    height: 170px;
+    margin: 7px auto 35px auto;
+    width: 100%;
+    width: 335px !important;
+    display: flex;
+    justify-content: center;
+    background: var(--tg-theme-secondary-bg-color);
+    border-radius: 10px;
+    /* Затемнение с боков, используя тот же цвет, что и фон */
+    position: relative;
+    overflow: hidden;
+}
+
+.raffle-roller::before,
+.raffle-roller::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 35px; /* Ширина затемнённых краёв */
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.raffle-roller::before {
+    left: 0;
+    background: linear-gradient(to right, var(--tg-theme-secondary-bg-color) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.raffle-roller::after {
+    right: 0;
+    background: linear-gradient(to left, var(--tg-theme-secondary-bg-color) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.raffle-roller-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 2px;
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  height: 170px;
+}
+
+.raffle-roller-container {
+  display: flex;
+  height: 150px;
+  transition: all 8s cubic-bezier(.08,.6,0,1);
+  width: max-content;
+  margin-left: 0;
+  gap: 7px;
+}
+
+/* Центральная полоска */
+.raffle-roller-holder::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 94%;
+  left: 50%;
+  background: var(--tg-theme-button-color);
+  transform: translateX(-50%);
+  opacity: 0.5;
+}
+
+/* Верхний треугольник */
+.raffle-roller-holder::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -5px; /* Подняли треугольник выше */
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid var(--tg-theme-button-color); /* Перевернутый треугольник */
+  opacity: 0.5;
+}
+
+/* Нижний треугольник — создаём с помощью дополнительного псевдоэлемента */
+.raffle-roller-holder .bottom-triangle {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px; /* Опустили треугольник ниже */
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid var(--tg-theme-button-color); /* Обычный треугольник */
+  opacity: 0.5;
+}
+.start-button {
+  margin: -15px auto auto auto;
+  max-width: clamp(335px, 80%, 725px);
+  display: flex;
+  justify-content: center;
+  width: 100%; /* 🆕 добавили */
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85px;
+    height: 150px;
+    background: var(--tg-theme-bg-color);
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center 15px;
+}
+.star-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+.price-container {
+  display: flex;
+  margin-top: 90%;
+  left: 60%;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ba7000;
+  background-color: #f0b40029;
+  padding: .5rem .75rem;
+  border-radius: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Inter, sans-serif;
+}
+
+.inventory {
+	margin: 0 auto;
+	width: 960px;
+	max-width: 953px;
+	padding: 10px 15px 6px;
+	height: auto;
+	border: 2px solid #1c3344;
+}
+
+.demo-mode-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px auto 0px auto;
+  max-width: clamp(335px, 80%, 725px);
+  padding: 0 -15px;
+}
+
+.switch-container {
+  margin: 0px -20px 0px auto;
+  max-width: clamp(335px, 80%, 725px);
+  padding: 0 -15px;
+}
+
+.start-button {
+    margin: -15px auto auto auto;
+    max-width: clamp(335px, 80%, 725px);
+    display: flex;
+    justify-content: center;
+}
+.start-button button {
+  width: 100%;
+  max-width: clamp(335px, 100%, 725px);
+}
+
+
+.possible-prizes-container {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 10px;
+  margin: 20px auto;
+  width: 100%;
+  max-width: clamp(320px, 80%, 725px);
+  background-color: var(--tg-theme-secondary-bg-color);
+  border-radius: 12px;
+  border: 1px solid var(--tg-theme-section-separator-color, var(--theme-delimiter));
+  min-height: 120px;
+  white-space: nowrap;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(90, 90, 90, 0.3) transparent;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Inter, sans-serif;
+  scrollbar-width: none;
+}
+
+.possible-prizes-container::-webkit-scrollbar {
+  height: 5px;
+}
+
+.possible-prizes-container::-webkit-scrollbar-thumb {
+  background: rgba(90, 90, 90, 0.3);
+  border-radius: 5px;
+}
+
+.possible-prizes-inner {
+  display: flex;
+  gap: 7px;
+}
+
+.possible-prize {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--tg-theme-bg-color);
+  border-radius: 12px;
+  padding: 10px;
+  min-width: 60px;
+  max-width: 60px; /* Ограничение по ширине */
+  text-align: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  font-weight: 500;
+  color: #ba7000;
+}
+
+.prize-chance {
+  font-size: 12px;
+  color: var(--tg-theme-hint-color);
+  display: flex;
+  align-items: center;
+}
+
+.prize-chance img {
+  width: 14px;
+  height: 14px;
+  margin-left: 4px;
+}
+
+.prize-image img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.prize-stars {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 183, 39, 0.08);
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.prize-stars img {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+
+/* временно модальное окно */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--tg-theme-bg-color);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+.modal-content h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.modal-prize-image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.claim-button {
+  background-color: var(--tg-theme-button-color);
+  color: var(--tg-theme-button-text-color);
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+.sell-button {
+  background-color: rgba(255, 183, 39, 0.8);
+  color: #000;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+
